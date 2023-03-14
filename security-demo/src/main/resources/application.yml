@@ -1,0 +1,19 @@
+server:
+  port: 1256
+  servlet:
+    context-path: /sect
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/demo_security?serverTimezone=GMT%2B8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# mybatis配置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml # mapper.xml文件扫描目录
+  configuration:
+    map-underscore-to-camel-case: true # 配置驼峰命名配置
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl # 配置日志输出
+

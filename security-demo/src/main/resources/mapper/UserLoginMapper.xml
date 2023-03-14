@@ -1,0 +1,15 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.onezed.learn.security.mapper.UserLoginMapper">
+
+    <select id="selectUser" parameterType="com.onezed.learn.security.model.vo.LoginVO"
+            resultType="com.onezed.learn.security.model.po.UserPO">
+        select * from sect_user where username = #{vo.username} and user_password = #{vo.password}
+    </select>
+
+    <select id="selectUserOnToken" resultType="com.onezed.learn.security.model.po.UserPO">
+        select * from sect_user where username = #{token}
+    </select>
+
+</mapper>
